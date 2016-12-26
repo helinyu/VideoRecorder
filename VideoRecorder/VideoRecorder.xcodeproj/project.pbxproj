@@ -15,6 +15,11 @@
 		DCE458081E110147008FB39F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCE458061E110147008FB39F /* LaunchScreen.storyboard */; };
 		DCE458131E110147008FB39F /* VideoRecorderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE458121E110147008FB39F /* VideoRecorderTests.m */; };
 		DCE4581E1E110147008FB39F /* VideoRecorderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE4581D1E110147008FB39F /* VideoRecorderUITests.m */; };
+		DCE458301E11024F008FB39F /* VideoRecordService.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE4582F1E11024F008FB39F /* VideoRecordService.m */; };
+		DCE458331E1109FC008FB39F /* VideoRecordViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE458321E1109FC008FB39F /* VideoRecordViewController.m */; };
+		DCE458351E110A18008FB39F /* Common.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DCE458341E110A18008FB39F /* Common.storyboard */; };
+		DCE458371E1118AE008FB39F /* Common.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DCE458361E1118AE008FB39F /* Common.xcassets */; };
+		DCE4583E1E1125C6008FB39F /* NSObject+Screen.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE4583D1E1125C6008FB39F /* NSObject+Screen.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +56,14 @@
 		DCE458191E110147008FB39F /* VideoRecorderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VideoRecorderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE4581D1E110147008FB39F /* VideoRecorderUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoRecorderUITests.m; sourceTree = "<group>"; };
 		DCE4581F1E110147008FB39F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DCE4582E1E11024F008FB39F /* VideoRecordService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordService.h; sourceTree = "<group>"; };
+		DCE4582F1E11024F008FB39F /* VideoRecordService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordService.m; sourceTree = "<group>"; };
+		DCE458311E1109FC008FB39F /* VideoRecordViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoRecordViewController.h; sourceTree = "<group>"; };
+		DCE458321E1109FC008FB39F /* VideoRecordViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoRecordViewController.m; sourceTree = "<group>"; };
+		DCE458341E110A18008FB39F /* Common.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Common.storyboard; sourceTree = "<group>"; };
+		DCE458361E1118AE008FB39F /* Common.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Common.xcassets; sourceTree = "<group>"; };
+		DCE4583C1E1125C6008FB39F /* NSObject+Screen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Screen.h"; sourceTree = "<group>"; };
+		DCE4583D1E1125C6008FB39F /* NSObject+Screen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Screen.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +114,10 @@
 		DCE457F71E110147008FB39F /* VideoRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				DCE458341E110A18008FB39F /* Common.storyboard */,
+				DCE458361E1118AE008FB39F /* Common.xcassets */,
+				DCE4583B1E1125AC008FB39F /* category */,
+				DCE4582D1E110240008FB39F /* VideoRecord */,
 				DCE457FB1E110147008FB39F /* AppDelegate.h */,
 				DCE457FC1E110147008FB39F /* AppDelegate.m */,
 				DCE457FE1E110147008FB39F /* ViewController.h */,
@@ -138,6 +155,26 @@
 				DCE4581F1E110147008FB39F /* Info.plist */,
 			);
 			path = VideoRecorderUITests;
+			sourceTree = "<group>";
+		};
+		DCE4582D1E110240008FB39F /* VideoRecord */ = {
+			isa = PBXGroup;
+			children = (
+				DCE4582E1E11024F008FB39F /* VideoRecordService.h */,
+				DCE4582F1E11024F008FB39F /* VideoRecordService.m */,
+				DCE458311E1109FC008FB39F /* VideoRecordViewController.h */,
+				DCE458321E1109FC008FB39F /* VideoRecordViewController.m */,
+			);
+			path = VideoRecord;
+			sourceTree = "<group>";
+		};
+		DCE4583B1E1125AC008FB39F /* category */ = {
+			isa = PBXGroup;
+			children = (
+				DCE4583C1E1125C6008FB39F /* NSObject+Screen.h */,
+				DCE4583D1E1125C6008FB39F /* NSObject+Screen.m */,
+			);
+			path = category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,7 +244,7 @@
 				TargetAttributes = {
 					DCE457F41E110147008FB39F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = D2XBEJ6876;
+						DevelopmentTeam = 8VD84769GG;
 						ProvisioningStyle = Automatic;
 					};
 					DCE4580D1E110147008FB39F = {
@@ -249,7 +286,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE458371E1118AE008FB39F /* Common.xcassets in Resources */,
 				DCE458081E110147008FB39F /* LaunchScreen.storyboard in Resources */,
+				DCE458351E110A18008FB39F /* Common.storyboard in Resources */,
 				DCE458051E110147008FB39F /* Assets.xcassets in Resources */,
 				DCE458031E110147008FB39F /* Main.storyboard in Resources */,
 			);
@@ -277,7 +316,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCE458001E110147008FB39F /* ViewController.m in Sources */,
+				DCE458331E1109FC008FB39F /* VideoRecordViewController.m in Sources */,
 				DCE457FD1E110147008FB39F /* AppDelegate.m in Sources */,
+				DCE4583E1E1125C6008FB39F /* NSObject+Screen.m in Sources */,
+				DCE458301E11024F008FB39F /* VideoRecordService.m in Sources */,
 				DCE457FA1E110147008FB39F /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -373,7 +415,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -415,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -427,10 +469,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D2XBEJ6876;
+				DEVELOPMENT_TEAM = 8VD84769GG;
 				INFOPLIST_FILE = VideoRecorder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dtspread.apps.VideoRecorder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LinkerLab.DrivingRecord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -439,10 +481,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D2XBEJ6876;
+				DEVELOPMENT_TEAM = 8VD84769GG;
 				INFOPLIST_FILE = VideoRecorder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.dtspread.apps.VideoRecorder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.LinkerLab.DrivingRecord;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -516,6 +558,7 @@
 				DCE458241E110147008FB39F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCE458251E110147008FB39F /* Build configuration list for PBXNativeTarget "VideoRecorderTests" */ = {
 			isa = XCConfigurationList;
@@ -524,6 +567,7 @@
 				DCE458271E110147008FB39F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCE458281E110147008FB39F /* Build configuration list for PBXNativeTarget "VideoRecorderUITests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +576,7 @@
 				DCE4582A1E110147008FB39F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

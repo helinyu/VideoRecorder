@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "VideoRecordViewController.h"
 
 @interface ViewController ()
 
@@ -16,13 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
 }
 
+- (IBAction)onRecordVideoClicked:(id)sender {
+    VideoRecordViewController *VRVC = [[UIStoryboard storyboardWithName:@"Common" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([VideoRecordViewController class])];
+    [self.navigationController pushViewController:VRVC animated:true];
+//    [self presentViewController:VRVC animated:true completion:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Video Record View Controller-->
+        <scene sceneID="xWE-RJ-4Ti">
+            <objects>
+                <viewController storyboardIdentifier="VideoRecordViewController" hidesBottomBarWhenPushed="YES" id="jjd-2l-Mrt" customClass="VideoRecordViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gIC-qA-1lf"/>
+                        <viewControllerLayoutGuide type="bottom" id="yfr-46-xCq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7hY-Jt-sOG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMn-x4-Uf3" userLabel="View record view">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="535.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="HMn-x4-Uf3" secondAttribute="height" multiplier="0.7" id="1MO-Oe-MfW"/>
+                                </constraints>
+                            </view>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_common_videorecorder_record" highlightedImage="btn_common_videorecorder_record_select" translatesAutoresizingMaskIntoConstraints="NO" id="p5z-X9-ia8">
+                                <rect key="frame" x="149.5" y="571" width="76" height="76"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="T5l-iO-nh3" appends="YES" id="vx9-62-rpH"/>
+                                </connections>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="p5z-X9-ia8" firstAttribute="centerX" secondItem="7hY-Jt-sOG" secondAttribute="centerX" id="85Y-AN-FyP"/>
+                            <constraint firstItem="yfr-46-xCq" firstAttribute="top" secondItem="p5z-X9-ia8" secondAttribute="bottom" constant="20" id="9vU-Oq-DxA"/>
+                            <constraint firstItem="HMn-x4-Uf3" firstAttribute="top" secondItem="gIC-qA-1lf" secondAttribute="bottom" id="cOX-tL-4ps"/>
+                            <constraint firstItem="HMn-x4-Uf3" firstAttribute="leading" secondItem="7hY-Jt-sOG" secondAttribute="leading" id="rOv-GD-D8W"/>
+                            <constraint firstAttribute="trailing" secondItem="HMn-x4-Uf3" secondAttribute="trailing" id="y1w-XU-JNO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cKa-6h-wHp"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="videoRecordPlaygroundView" destination="HMn-x4-Uf3" id="pKy-AQ-zI8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nbg-qE-1G2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="T5l-iO-nh3">
+                    <connections>
+                        <action selector="onTapTakeVideoClicked:" destination="jjd-2l-Mrt" id="pd7-GY-Qhy"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="735" y="137"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="btn_common_videorecorder_record" width="76" height="76"/>
+        <image name="btn_common_videorecorder_record_select" width="76" height="76"/>
+    </resources>
+</document>
