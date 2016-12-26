@@ -49,9 +49,8 @@
     return true;
 }
 
-- (IBAction)onTapTakeVideoClicked:(id)sender {
-    _takeVideoImage.highlighted = true;
-    
+- (IBAction)onLongPressClicked:(id)sender {
+    NSLog(@"长按");
 }
 
 

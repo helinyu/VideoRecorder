@@ -32,7 +32,7 @@
                             <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_common_videorecorder_record" highlightedImage="btn_common_videorecorder_record_select" translatesAutoresizingMaskIntoConstraints="NO" id="p5z-X9-ia8">
                                 <rect key="frame" x="149.5" y="571" width="76" height="76"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="T5l-iO-nh3" appends="YES" id="vx9-62-rpH"/>
+                                    <outletCollection property="gestureRecognizers" destination="5oQ-Yx-mRR" appends="YES" id="lq9-PG-qE2"/>
                                 </connections>
                             </imageView>
                         </subviews>
@@ -54,11 +54,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nbg-qE-1G2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="T5l-iO-nh3">
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="5oQ-Yx-mRR">
                     <connections>
-                        <action selector="onTapTakeVideoClicked:" destination="jjd-2l-Mrt" id="pd7-GY-Qhy"/>
+                        <action selector="onLongPressClicked:" destination="jjd-2l-Mrt" id="rR2-N4-iyS"/>
                     </connections>
-                </tapGestureRecognizer>
+                </pongPressGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="735" y="137"/>
         </scene>
