@@ -50,7 +50,15 @@
 }
 
 - (IBAction)onLongPressClicked:(id)sender {
-    NSLog(@"长按");
+    
+    UIGestureRecognizer *gesture = sender;
+    if (gesture.state == UIGestureRecognizerStateBegan) {
+        NSLog(@"开始");
+    }
+    
+    if (gesture.state == UIGestureRecognizerStateEnded) {
+        NSLog(@"结束");
+    }
 }
 
 
