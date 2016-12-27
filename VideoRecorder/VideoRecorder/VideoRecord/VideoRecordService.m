@@ -8,29 +8,41 @@
 
 #import "VideoRecordService.h"
 
+
+
 @interface VideoRecordService ()<AVCaptureFileOutputRecordingDelegate>
 
 @property (strong, nonatomic) AVCaptureSession *captureSession;
 @property (strong, nonatomic) AVCaptureMovieFileOutput * captureMovieFileOutput;
-
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
+
+@property (strong, nonatomic) NSMutableArray *recordTimes;
 
 @end
 
 @implementation VideoRecordService
 
+- (instancetype)initWithDelegate:(id<VideoRecordServiceDelegate>)recordServiceDelegate{
+   self = [self init];
+    if (self) {
+        self.recordServiceDelegate = recordServiceDelegate;
+    }
+    return self;
+}
+
 - (instancetype)init
 {
     self = [super init];
     if (self) {
+        
+        _recordTimes = [NSMutableArray new];
+        
         //初始化会话
         _captureSession = [AVCaptureSession new];
         if ([_captureSession canSetSessionPreset:AVCaptureSessionPresetMedium]) {
             [_captureSession setSessionPreset:AVCaptureSessionPresetMedium];
         }
-        
-        
-        
+
         //获取摄像头
         AVCaptureDevice *videoCaptureDevice = [self _getCameraDeviceWithPosition:AVCaptureDevicePositionBack];
         if (!videoCaptureDevice) {
@@ -107,17 +119,6 @@
     [view.layer addSublayer:self.captureVideoPreviewLayer];
 }
 
-- (void)startRecord {
-    NSString *outputFielPath=[NSTemporaryDirectory() stringByAppendingString:@"test.mp4"];
-    NSLog(@"save path is :%@",outputFielPath);
-    NSURL *fileUrl=[NSURL fileURLWithPath:outputFielPath];
-    [self.captureMovieFileOutput startRecordingToOutputFileURL:fileUrl recordingDelegate:self];
-}
-
-- (void)stopRecord {
-    [self.captureMovieFileOutput stopRecording];
-}
-
 - (void)dealloc{
     _captureSession = nil;
     _captureMovieFileOutput = nil;
@@ -125,7 +126,37 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+- (void)performRecording {
+    NSString *outputFielPath=[NSTemporaryDirectory() stringByAppendingString:@"test.mp4"];
+    NSLog(@"save path is :%@",outputFielPath);
+    NSURL *fileUrl=[NSURL fileURLWithPath:outputFielPath];
+    [self.captureMovieFileOutput startRecordingToOutputFileURL:fileUrl recordingDelegate:self];
+    
+    if (_recordTimes.count > 0) {
+        // 刻录状态
+        if ([self.recordServiceDelegate respondsToSelector:@selector(viewRecordSerivce:withRecordStatus:)]) {
+            [self.recordServiceDelegate viewRecordSerivce:self withRecordStatus:RecordStatusRecording];
+        }
+    }else {
+        if ([self.recordServiceDelegate respondsToSelector:@selector(viewRecordSerivce:withRecordStatus:)]) {
+            [self.recordServiceDelegate viewRecordSerivce:self withRecordStatus:RecordStatusbegan];
+        }
+    }
+    
+    NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
+    [_recordTimes addObject:@(currentTime)];
+
+}
+
+- (void)performStopRecord {
+    if ([self.recordServiceDelegate respondsToSelector:@selector(viewRecordSerivce:withRecordStatus:)]) {
+        [self.recordServiceDelegate viewRecordSerivce:self withRecordStatus:RecordStatusPause];
+    }
+    [self.captureMovieFileOutput stopRecording];
+}
+
 #pragma mark -- delegate
+
 - (void)captureOutput:(AVCaptureFileOutput *)captureOutput didStartRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections {
     NSLog(@"didStartRecordingToOutputFileAtURL");
 }

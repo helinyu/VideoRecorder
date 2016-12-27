@@ -29,18 +29,56 @@
                                     <constraint firstAttribute="width" secondItem="HMn-x4-Uf3" secondAttribute="height" multiplier="0.7" id="1MO-Oe-MfW"/>
                                 </constraints>
                             </view>
-                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_common_videorecorder_record" highlightedImage="btn_common_videorecorder_record_select" translatesAutoresizingMaskIntoConstraints="NO" id="p5z-X9-ia8">
-                                <rect key="frame" x="149.5" y="571" width="76" height="76"/>
+                            <view contentMode="scaleToFill" restorationIdentifier="ProgressView" translatesAutoresizingMaskIntoConstraints="NO" id="r1s-h1-sef" customClass="ProgressView">
+                                <rect key="frame" x="0.0" y="535.5" width="375" height="10"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="10" id="gR1-Ob-QS2"/>
+                                </constraints>
+                            </view>
+                            <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btn_common_videorecorder_record" translatesAutoresizingMaskIntoConstraints="NO" id="p5z-X9-ia8">
+                                <rect key="frame" x="149.5" y="561" width="76" height="76"/>
                                 <connections>
                                     <outletCollection property="gestureRecognizers" destination="5oQ-Yx-mRR" appends="YES" id="lq9-PG-qE2"/>
                                 </connections>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="按住录制" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Mp-4I-9Q5">
+                                <rect key="frame" x="158.5" y="642" width="57.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4xl-t0-smC" userLabel="right Button">
+                                <rect key="frame" x="265.5" y="572" width="54" height="54"/>
+                                <state key="normal" image="btn_common_videorecorder_confirm"/>
+                                <state key="selected" image="btn_common_videorecorder_confirm_select"/>
+                                <state key="highlighted" image="btn_common_videorecorder_confirm"/>
+                                <connections>
+                                    <action selector="onChoiceVideoClicked:" destination="jjd-2l-Mrt" eventType="touchUpInside" id="CDI-5Z-M3e"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kG7-hH-xCx" userLabel="left Button">
+                                <rect key="frame" x="55.5" y="572" width="54" height="54"/>
+                                <state key="normal" image="btn_common_videorecorder_back"/>
+                                <connections>
+                                    <action selector="onDeleteVideoClicked:" destination="jjd-2l-Mrt" eventType="touchUpInside" id="kB9-xE-FxR"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="r1s-h1-sef" secondAttribute="trailing" id="4bG-ow-eyd"/>
+                            <constraint firstItem="9Mp-4I-9Q5" firstAttribute="top" secondItem="p5z-X9-ia8" secondAttribute="bottom" constant="5" id="6sD-Zh-G0U"/>
                             <constraint firstItem="p5z-X9-ia8" firstAttribute="centerX" secondItem="7hY-Jt-sOG" secondAttribute="centerX" id="85Y-AN-FyP"/>
-                            <constraint firstItem="yfr-46-xCq" firstAttribute="top" secondItem="p5z-X9-ia8" secondAttribute="bottom" constant="20" id="9vU-Oq-DxA"/>
+                            <constraint firstItem="yfr-46-xCq" firstAttribute="top" secondItem="p5z-X9-ia8" secondAttribute="bottom" constant="30" id="9vU-Oq-DxA"/>
+                            <constraint firstItem="p5z-X9-ia8" firstAttribute="leading" secondItem="kG7-hH-xCx" secondAttribute="trailing" constant="40" id="Ebx-6H-xrZ"/>
+                            <constraint firstItem="4xl-t0-smC" firstAttribute="centerY" secondItem="p5z-X9-ia8" secondAttribute="centerY" id="SUX-ol-BFS"/>
+                            <constraint firstItem="kG7-hH-xCx" firstAttribute="centerY" secondItem="p5z-X9-ia8" secondAttribute="centerY" id="TJJ-lD-och"/>
                             <constraint firstItem="HMn-x4-Uf3" firstAttribute="top" secondItem="gIC-qA-1lf" secondAttribute="bottom" id="cOX-tL-4ps"/>
+                            <constraint firstItem="r1s-h1-sef" firstAttribute="leading" secondItem="7hY-Jt-sOG" secondAttribute="leading" id="cgE-G9-oJR"/>
+                            <constraint firstItem="4xl-t0-smC" firstAttribute="leading" secondItem="p5z-X9-ia8" secondAttribute="trailing" constant="40" id="eMg-XF-1UV"/>
+                            <constraint firstItem="r1s-h1-sef" firstAttribute="top" secondItem="HMn-x4-Uf3" secondAttribute="bottom" id="hM6-So-Ikt"/>
+                            <constraint firstItem="9Mp-4I-9Q5" firstAttribute="centerX" secondItem="7hY-Jt-sOG" secondAttribute="centerX" id="qVX-fj-mET"/>
                             <constraint firstItem="HMn-x4-Uf3" firstAttribute="leading" secondItem="7hY-Jt-sOG" secondAttribute="leading" id="rOv-GD-D8W"/>
                             <constraint firstAttribute="trailing" secondItem="HMn-x4-Uf3" secondAttribute="trailing" id="y1w-XU-JNO"/>
                         </constraints>
@@ -50,6 +88,9 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="choiceBtn" destination="4xl-t0-smC" id="rN7-dQ-Lxq"/>
+                        <outlet property="progressView" destination="r1s-h1-sef" id="t5X-Fc-Up2"/>
+                        <outlet property="takeVideoImage" destination="p5z-X9-ia8" id="k5H-hz-N1u"/>
                         <outlet property="videoRecordPlaygroundView" destination="HMn-x4-Uf3" id="pKy-AQ-zI8"/>
                     </connections>
                 </viewController>
@@ -62,9 +103,29 @@
             </objects>
             <point key="canvasLocation" x="735" y="137"/>
         </scene>
+        <!--Preview Video View Controller-->
+        <scene sceneID="yhq-t1-YYN">
+            <objects>
+                <viewController storyboardIdentifier="PreviewVideoViewController" id="TWu-z5-kcF" customClass="PreviewVideoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iny-CK-Uby"/>
+                        <viewControllerLayoutGuide type="bottom" id="HH0-wK-DGK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uIg-1r-j9g">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8es-Sh-PRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1356" y="130"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="btn_common_videorecorder_back" width="54" height="54"/>
+        <image name="btn_common_videorecorder_confirm" width="54" height="54"/>
+        <image name="btn_common_videorecorder_confirm_select" width="54" height="54"/>
         <image name="btn_common_videorecorder_record" width="76" height="76"/>
-        <image name="btn_common_videorecorder_record_select" width="76" height="76"/>
     </resources>
 </document>

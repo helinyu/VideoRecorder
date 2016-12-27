@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PreviewVideoViewController.h"
 
 @interface VideoRecordViewController : UIViewController
 

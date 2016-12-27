@@ -13,8 +13,8 @@
 @implementation NSObject (Screen)
 
 + (BOOL)isIphone7 {
-
-    if ((ScreenRect.size.width == 375)&&(ScreenRect.size.height == 667)) {
+    if (CGSizeEqualToSize(ScreenRect.size, CGSizeMake(375, 667))) {
+//        (ScreenRect.size.width == 375)&&(ScreenRect.size.height == 667
         return true;
     }
     return false;

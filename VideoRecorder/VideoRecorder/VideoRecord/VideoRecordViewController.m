@@ -8,12 +8,19 @@
 
 #import "VideoRecordViewController.h"
 #import "VideoRecordService.h"
+#import "FLImageView.h"
+#import "ProgressView.h"
 
-@interface VideoRecordViewController ()
+@interface VideoRecordViewController ()<VideoRecordServiceDelegate>
 @property (strong, nonatomic) VideoRecordService* vrService;
 
 @property (weak, nonatomic) IBOutlet UIImageView *takeVideoImage;
 @property (weak, nonatomic) IBOutlet UIView *videoRecordPlaygroundView;
+@property (weak, nonatomic) IBOutlet UIButton *choiceBtn;
+@property (weak, nonatomic) IBOutlet ProgressView *progressView;
+@property (strong, nonatomic) NSTimer *progressTimer;
+@property (assign, nonatomic) NSTimeInterval beginTime;
+@property (assign, nonatomic) NSTimeInterval endTime;
 
 @end
 
@@ -22,14 +29,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _vrService = [VideoRecordService new];
+    _vrService = [[VideoRecordService alloc] initWithDelegate:self];
+    
     [_vrService configureOverWholeView:self.videoRecordPlaygroundView];
+    
+    self.progressView.wholeTime = 30;
     
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
     
+    _choiceBtn.selected = false;
+    _takeVideoImage.image = [UIImage imageNamed:@"btn_common_videorecorder_record"];
     [[UIApplication sharedApplication] setStatusBarHidden:true];
     if (self.navigationController) {
         [self.navigationController setNavigationBarHidden:true];
@@ -54,13 +66,62 @@
     UIGestureRecognizer *gesture = sender;
     if (gesture.state == UIGestureRecognizerStateBegan) {
         NSLog(@"开始");
+        [_vrService performRecording];
     }
     
     if (gesture.state == UIGestureRecognizerStateEnded) {
         NSLog(@"结束");
+        [_vrService performStopRecord];
     }
 }
 
+- (IBAction)onDeleteVideoClicked:(id)sender {
+    NSLog(@"delete");
+}
+
+- (IBAction)onChoiceVideoClicked:(id)sender {
+    NSLog(@"choice video");
+    _choiceBtn.selected = true;
+    PreviewVideoViewController *pvVC = [[UIStoryboard storyboardWithName:@"Common" bundle:nil] instantiateViewControllerWithIdentifier:NSStringFromClass([PreviewVideoViewController class])];
+    [self.navigationController pushViewController:pvVC animated:true];
+}
+
+#pragma mark -- videoRecordServiceDelegate
+
+- (void)viewRecordSerivce:(VideoRecordService*)service withRecordStatus:(RecordStatus)status {
+    
+    switch (status) {
+        case RecordStatusbegan:
+        {
+            _takeVideoImage.image = [UIImage imageNamed:@"btn_common_videorecorder_record_select"];
+            _beginTime = [[NSDate date] timeIntervalSince1970];
+        }
+            break;
+        case RecordStatusRecording:
+        {
+            _takeVideoImage.image = [UIImage imageNamed:@"btn_common_videorecorder_record_select"];
+            _beginTime = [[NSDate date] timeIntervalSince1970];
+        }
+            break;
+        case RecordStatusPause:
+        {
+            _takeVideoImage.image = [UIImage imageNamed:@"btn_common_videorecorder_record"];
+            [_progressTimer invalidate];
+            _progressTimer = nil;
+            _endTime = [[NSDate date] timeIntervalSince1970];
+        }
+            break;
+        case RecordStatusEnd:
+        {
+            [_progressTimer invalidate];
+            _progressTimer = nil;
+            _endTime = [[NSDate date] timeIntervalSince1970];
+        }
+            break;
+        default:
+            break;
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

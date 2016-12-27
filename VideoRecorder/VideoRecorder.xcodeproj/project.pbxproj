@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DCDE32131E120ADE0092ECE2 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE32121E120ADE0092ECE2 /* ProgressView.m */; };
+		DCDE32161E120FF30092ECE2 /* PreviewVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE32151E120FF30092ECE2 /* PreviewVideoViewController.m */; };
+		DCDE32191E1212E60092ECE2 /* FLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE32181E1212E60092ECE2 /* FLImageView.m */; };
 		DCE457FA1E110147008FB39F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE457F91E110147008FB39F /* main.m */; };
 		DCE457FD1E110147008FB39F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE457FC1E110147008FB39F /* AppDelegate.m */; };
 		DCE458001E110147008FB39F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE457FF1E110147008FB39F /* ViewController.m */; };
@@ -40,6 +43,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DCDE32111E120ADE0092ECE2 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
+		DCDE32121E120ADE0092ECE2 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		DCDE32141E120FF30092ECE2 /* PreviewVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewVideoViewController.h; sourceTree = "<group>"; };
+		DCDE32151E120FF30092ECE2 /* PreviewVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewVideoViewController.m; sourceTree = "<group>"; };
+		DCDE32171E1212E60092ECE2 /* FLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLImageView.h; sourceTree = "<group>"; };
+		DCDE32181E1212E60092ECE2 /* FLImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLImageView.m; sourceTree = "<group>"; };
 		DCE457F51E110147008FB39F /* VideoRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VideoRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCE457F91E110147008FB39F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DCE457FB1E110147008FB39F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -91,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DCDE32101E120ACD0092ECE2 /* component */ = {
+			isa = PBXGroup;
+			children = (
+				DCDE32111E120ADE0092ECE2 /* ProgressView.h */,
+				DCDE32121E120ADE0092ECE2 /* ProgressView.m */,
+			);
+			path = component;
+			sourceTree = "<group>";
+		};
 		DCE457EC1E110147008FB39F = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +134,7 @@
 			children = (
 				DCE458341E110A18008FB39F /* Common.storyboard */,
 				DCE458361E1118AE008FB39F /* Common.xcassets */,
+				DCDE32101E120ACD0092ECE2 /* component */,
 				DCE4583B1E1125AC008FB39F /* category */,
 				DCE4582D1E110240008FB39F /* VideoRecord */,
 				DCE457FB1E110147008FB39F /* AppDelegate.h */,
@@ -164,6 +183,8 @@
 				DCE4582F1E11024F008FB39F /* VideoRecordService.m */,
 				DCE458311E1109FC008FB39F /* VideoRecordViewController.h */,
 				DCE458321E1109FC008FB39F /* VideoRecordViewController.m */,
+				DCDE32141E120FF30092ECE2 /* PreviewVideoViewController.h */,
+				DCDE32151E120FF30092ECE2 /* PreviewVideoViewController.m */,
 			);
 			path = VideoRecord;
 			sourceTree = "<group>";
@@ -173,6 +194,8 @@
 			children = (
 				DCE4583C1E1125C6008FB39F /* NSObject+Screen.h */,
 				DCE4583D1E1125C6008FB39F /* NSObject+Screen.m */,
+				DCDE32171E1212E60092ECE2 /* FLImageView.h */,
+				DCDE32181E1212E60092ECE2 /* FLImageView.m */,
 			);
 			path = category;
 			sourceTree = "<group>";
@@ -320,7 +343,10 @@
 				DCE457FD1E110147008FB39F /* AppDelegate.m in Sources */,
 				DCE4583E1E1125C6008FB39F /* NSObject+Screen.m in Sources */,
 				DCE458301E11024F008FB39F /* VideoRecordService.m in Sources */,
+				DCDE32131E120ADE0092ECE2 /* ProgressView.m in Sources */,
 				DCE457FA1E110147008FB39F /* main.m in Sources */,
+				DCDE32161E120FF30092ECE2 /* PreviewVideoViewController.m in Sources */,
+				DCDE32191E1212E60092ECE2 /* FLImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
