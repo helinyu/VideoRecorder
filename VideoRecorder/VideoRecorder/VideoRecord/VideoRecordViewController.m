@@ -142,11 +142,15 @@
 
 - (void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)error {
     NSLog(@"didFinishRecordingToOutputFileAtURL");
+    
+    [self.progressView stopRunning];
 }
 
 #pragma mark -- progressView delegate 
 - (void)recordProgressRunningToEnd {
     NSLog(@"progress running to end");
+    
+    [self.progressView stopRunning];
 }
 
 - (void)didReceiveMemoryWarning {

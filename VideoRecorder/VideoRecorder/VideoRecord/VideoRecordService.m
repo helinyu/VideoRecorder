@@ -8,7 +8,7 @@
 
 #import "VideoRecordService.h"
 
-@interface VideoRecordService ()<AVCaptureFileOutputRecordingDelegate,RecordProgressViewDelegate>
+@interface VideoRecordService ()
 
 @property (strong, nonatomic) AVCaptureSession *captureSession;
 @property (strong, nonatomic) AVCaptureMovieFileOutput * captureMovieFileOutput;
