@@ -8,15 +8,15 @@
 
 #import "VideoRecordService.h"
 
-
-
-@interface VideoRecordService ()<AVCaptureFileOutputRecordingDelegate>
+@interface VideoRecordService ()<AVCaptureFileOutputRecordingDelegate,RecordProgressViewDelegate>
 
 @property (strong, nonatomic) AVCaptureSession *captureSession;
 @property (strong, nonatomic) AVCaptureMovieFileOutput * captureMovieFileOutput;
 @property (strong, nonatomic) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 
 @property (strong, nonatomic) NSMutableArray *recordTimes;
+
+@property (strong, nonatomic) VideoRecordViewController *fromViewController;
 
 @end
 
@@ -26,6 +26,7 @@
    self = [self init];
     if (self) {
         self.recordServiceDelegate = recordServiceDelegate;
+        self.fromViewController = (VideoRecordViewController*)recordServiceDelegate;
     }
     return self;
 }
@@ -130,7 +131,7 @@
     NSString *outputFielPath=[NSTemporaryDirectory() stringByAppendingString:@"test.mp4"];
     NSLog(@"save path is :%@",outputFielPath);
     NSURL *fileUrl=[NSURL fileURLWithPath:outputFielPath];
-    [self.captureMovieFileOutput startRecordingToOutputFileURL:fileUrl recordingDelegate:self];
+    [self.captureMovieFileOutput startRecordingToOutputFileURL:fileUrl recordingDelegate:self.fromViewController];
     
     if (_recordTimes.count > 0) {
         // 刻录状态
@@ -153,16 +154,6 @@
         [self.recordServiceDelegate viewRecordSerivce:self withRecordStatus:RecordStatusPause];
     }
     [self.captureMovieFileOutput stopRecording];
-}
-
-#pragma mark -- delegate
-
-- (void)captureOutput:(AVCaptureFileOutput *)captureOutput didStartRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections {
-    NSLog(@"didStartRecordingToOutputFileAtURL");
-}
-
-- (void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)error {
-    NSLog(@"didFinishRecordingToOutputFileAtURL");
 }
 
 @end

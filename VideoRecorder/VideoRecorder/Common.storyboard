@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="width" secondItem="HMn-x4-Uf3" secondAttribute="height" multiplier="0.7" id="1MO-Oe-MfW"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" restorationIdentifier="ProgressView" translatesAutoresizingMaskIntoConstraints="NO" id="r1s-h1-sef" customClass="ProgressView">
+                            <view contentMode="scaleToFill" restorationIdentifier="RecordProgressView" translatesAutoresizingMaskIntoConstraints="NO" id="r1s-h1-sef" customClass="RecordProgressView">
                                 <rect key="frame" x="0.0" y="535.5" width="375" height="10"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -89,7 +89,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="choiceBtn" destination="4xl-t0-smC" id="rN7-dQ-Lxq"/>
-                        <outlet property="progressView" destination="r1s-h1-sef" id="t5X-Fc-Up2"/>
+                        <outlet property="progressView" destination="r1s-h1-sef" id="ci5-um-CHy"/>
                         <outlet property="takeVideoImage" destination="p5z-X9-ia8" id="k5H-hz-N1u"/>
                         <outlet property="videoRecordPlaygroundView" destination="HMn-x4-Uf3" id="pKy-AQ-zI8"/>
                     </connections>

@@ -7,17 +7,21 @@
 //
 
 #import "VideoRecordViewController.h"
-#import "VideoRecordService.h"
-#import "FLImageView.h"
-#import "ProgressView.h"
 
-@interface VideoRecordViewController ()<VideoRecordServiceDelegate>
+
+@interface VideoRecordViewController ()<VideoRecordServiceDelegate,RecordProgressViewDelegate>
+{
+    CGFloat             _secondsRecorded;
+    CGFloat             _secondsMax;
+    NSTimer              *_timer;
+}
 @property (strong, nonatomic) VideoRecordService* vrService;
 
 @property (weak, nonatomic) IBOutlet UIImageView *takeVideoImage;
 @property (weak, nonatomic) IBOutlet UIView *videoRecordPlaygroundView;
+@property (weak, nonatomic) IBOutlet RecordProgressView *progressView;
 @property (weak, nonatomic) IBOutlet UIButton *choiceBtn;
-@property (weak, nonatomic) IBOutlet ProgressView *progressView;
+
 @property (strong, nonatomic) NSTimer *progressTimer;
 @property (assign, nonatomic) NSTimeInterval beginTime;
 @property (assign, nonatomic) NSTimeInterval endTime;
@@ -29,11 +33,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    _vrService = [[VideoRecordService alloc] initWithDelegate:self];
+    _secondsMax = 20.0f;
     
+    _vrService = [[VideoRecordService alloc] initWithDelegate:self];
     [_vrService configureOverWholeView:self.videoRecordPlaygroundView];
     
-    self.progressView.wholeTime = 30;
+    self.progressView.maxProgressTime = _secondsMax;
+    self.progressView.minProgressTime = 2.0f;
+    self.progressView.delegate = self;
+
     
 }
 
@@ -121,6 +129,24 @@
         default:
             break;
     }
+}
+
+
+#pragma mark -- delegate
+
+- (void)captureOutput:(AVCaptureFileOutput *)captureOutput didStartRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections {
+    NSLog(@"didStartRecordingToOutputFileAtURL");
+    
+    [self.progressView startRunning];
+}
+
+- (void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)error {
+    NSLog(@"didFinishRecordingToOutputFileAtURL");
+}
+
+#pragma mark -- progressView delegate 
+- (void)recordProgressRunningToEnd {
+    NSLog(@"progress running to end");
 }
 
 - (void)didReceiveMemoryWarning {

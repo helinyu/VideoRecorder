@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DCDE32131E120ADE0092ECE2 /* ProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE32121E120ADE0092ECE2 /* ProgressView.m */; };
+		DC262A261E13571A00A8B624 /* RecordProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = DC262A251E13571A00A8B624 /* RecordProgressView.m */; };
+		DC262A291E13577800A8B624 /* UIColor+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = DC262A281E13577800A8B624 /* UIColor+Helper.m */; };
+		DC262A2C1E13578300A8B624 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = DC262A2B1E13578300A8B624 /* Helper.m */; };
+		DC262A2F1E13579D00A8B624 /* Helper+Time.m in Sources */ = {isa = PBXBuildFile; fileRef = DC262A2E1E13579D00A8B624 /* Helper+Time.m */; };
 		DCDE32161E120FF30092ECE2 /* PreviewVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE32151E120FF30092ECE2 /* PreviewVideoViewController.m */; };
 		DCDE32191E1212E60092ECE2 /* FLImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = DCDE32181E1212E60092ECE2 /* FLImageView.m */; };
 		DCE457FA1E110147008FB39F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DCE457F91E110147008FB39F /* main.m */; };
@@ -43,8 +46,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DCDE32111E120ADE0092ECE2 /* ProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressView.h; sourceTree = "<group>"; };
-		DCDE32121E120ADE0092ECE2 /* ProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressView.m; sourceTree = "<group>"; };
+		DC262A241E13571300A8B624 /* RecordProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecordProgressView.h; sourceTree = "<group>"; };
+		DC262A251E13571A00A8B624 /* RecordProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecordProgressView.m; sourceTree = "<group>"; };
+		DC262A271E13577800A8B624 /* UIColor+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Helper.h"; sourceTree = "<group>"; };
+		DC262A281E13577800A8B624 /* UIColor+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Helper.m"; sourceTree = "<group>"; };
+		DC262A2A1E13578300A8B624 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		DC262A2B1E13578300A8B624 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		DC262A2D1E13579D00A8B624 /* Helper+Time.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Helper+Time.h"; sourceTree = "<group>"; };
+		DC262A2E1E13579D00A8B624 /* Helper+Time.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Helper+Time.m"; sourceTree = "<group>"; };
 		DCDE32141E120FF30092ECE2 /* PreviewVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreviewVideoViewController.h; sourceTree = "<group>"; };
 		DCDE32151E120FF30092ECE2 /* PreviewVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreviewVideoViewController.m; sourceTree = "<group>"; };
 		DCDE32171E1212E60092ECE2 /* FLImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLImageView.h; sourceTree = "<group>"; };
@@ -103,8 +112,8 @@
 		DCDE32101E120ACD0092ECE2 /* component */ = {
 			isa = PBXGroup;
 			children = (
-				DCDE32111E120ADE0092ECE2 /* ProgressView.h */,
-				DCDE32121E120ADE0092ECE2 /* ProgressView.m */,
+				DC262A241E13571300A8B624 /* RecordProgressView.h */,
+				DC262A251E13571A00A8B624 /* RecordProgressView.m */,
 			);
 			path = component;
 			sourceTree = "<group>";
@@ -192,6 +201,12 @@
 		DCE4583B1E1125AC008FB39F /* category */ = {
 			isa = PBXGroup;
 			children = (
+				DC262A2D1E13579D00A8B624 /* Helper+Time.h */,
+				DC262A2E1E13579D00A8B624 /* Helper+Time.m */,
+				DC262A2A1E13578300A8B624 /* Helper.h */,
+				DC262A2B1E13578300A8B624 /* Helper.m */,
+				DC262A271E13577800A8B624 /* UIColor+Helper.h */,
+				DC262A281E13577800A8B624 /* UIColor+Helper.m */,
 				DCE4583C1E1125C6008FB39F /* NSObject+Screen.h */,
 				DCE4583D1E1125C6008FB39F /* NSObject+Screen.m */,
 				DCDE32171E1212E60092ECE2 /* FLImageView.h */,
@@ -339,13 +354,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				DCE458001E110147008FB39F /* ViewController.m in Sources */,
+				DC262A291E13577800A8B624 /* UIColor+Helper.m in Sources */,
+				DC262A261E13571A00A8B624 /* RecordProgressView.m in Sources */,
 				DCE458331E1109FC008FB39F /* VideoRecordViewController.m in Sources */,
 				DCE457FD1E110147008FB39F /* AppDelegate.m in Sources */,
 				DCE4583E1E1125C6008FB39F /* NSObject+Screen.m in Sources */,
 				DCE458301E11024F008FB39F /* VideoRecordService.m in Sources */,
-				DCDE32131E120ADE0092ECE2 /* ProgressView.m in Sources */,
 				DCE457FA1E110147008FB39F /* main.m in Sources */,
+				DC262A2C1E13578300A8B624 /* Helper.m in Sources */,
 				DCDE32161E120FF30092ECE2 /* PreviewVideoViewController.m in Sources */,
+				DC262A2F1E13579D00A8B624 /* Helper+Time.m in Sources */,
 				DCDE32191E1212E60092ECE2 /* FLImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
