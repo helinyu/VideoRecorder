@@ -282,8 +282,8 @@
 				TargetAttributes = {
 					DCE457F41E110147008FB39F = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8VD84769GG;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = 5992BVN2L6;
+						ProvisioningStyle = Manual;
 					};
 					DCE4580D1E110147008FB39F = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -513,11 +513,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8VD84769GG;
+				DEVELOPMENT_TEAM = 5992BVN2L6;
 				INFOPLIST_FILE = VideoRecorder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LinkerLab.DrivingRecord;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vanchu.apps.guimiquan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "76070d7b-a4e6-41c2-b9bc-8fb897b6dffb";
+				PROVISIONING_PROFILE_SPECIFIER = "guimiquan-dev";
 			};
 			name = Debug;
 		};
@@ -525,10 +527,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 8VD84769GG;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = VideoRecorder/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.LinkerLab.DrivingRecord;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vanchu.apps.guimiquan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

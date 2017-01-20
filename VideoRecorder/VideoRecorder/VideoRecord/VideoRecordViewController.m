@@ -75,11 +75,11 @@
     if (gesture.state == UIGestureRecognizerStateBegan) {
         NSLog(@"开始");
         [_vrService performRecording];
-    }
-    
-    if (gesture.state == UIGestureRecognizerStateEnded) {
-        NSLog(@"结束");
-        [_vrService performStopRecord];
+    }else{
+        if (gesture.state == UIGestureRecognizerStateEnded) {
+            NSLog(@"结束");
+            [_vrService performStopRecord];
+        }
     }
 }
 
@@ -131,18 +131,15 @@
     }
 }
 
-
 #pragma mark -- delegate
 
 - (void)captureOutput:(AVCaptureFileOutput *)captureOutput didStartRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections {
     NSLog(@"didStartRecordingToOutputFileAtURL");
-    
     [self.progressView startRunning];
 }
 
 - (void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)error {
     NSLog(@"didFinishRecordingToOutputFileAtURL");
-    
     [self.progressView stopRunning];
 }
 
@@ -151,6 +148,10 @@
     NSLog(@"progress running to end");
     
     [self.progressView stopRunning];
+}
+
+- (IBAction)onBackClicked:(id)sender {
+    [self.navigationController popViewControllerAnimated:true];
 }
 
 - (void)didReceiveMemoryWarning {

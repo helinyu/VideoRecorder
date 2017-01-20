@@ -11,6 +11,6 @@
 #import "VideoRecordService.h"
 #import "RecordProgressView.h"
 
-@interface VideoRecordViewController : UIViewController
+@interface VideoRecordViewController : UIViewController<AVCaptureFileOutputRecordingDelegate>
 
 @end

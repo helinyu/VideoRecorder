@@ -58,10 +58,24 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kG7-hH-xCx" userLabel="left Button">
-                                <rect key="frame" x="55.5" y="572" width="54" height="54"/>
+                                <rect key="frame" x="80.5" y="572" width="54" height="54"/>
                                 <state key="normal" image="btn_common_videorecorder_back"/>
                                 <connections>
                                     <action selector="onDeleteVideoClicked:" destination="jjd-2l-Mrt" eventType="touchUpInside" id="kB9-xE-FxR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rbe-vg-JxF">
+                                <rect key="frame" x="15.5" y="574" width="50" height="50"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Rbe-vg-JxF" secondAttribute="height" id="bWV-lE-x8C"/>
+                                    <constraint firstAttribute="width" constant="50" id="nIf-90-39u"/>
+                                </constraints>
+                                <state key="normal" title="back">
+                                    <color key="titleColor" red="1" green="0.1695070672" blue="0.071936471890000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="onBackClicked:" destination="jjd-2l-Mrt" eventType="touchUpInside" id="E1U-Pq-JPj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -71,7 +85,8 @@
                             <constraint firstItem="9Mp-4I-9Q5" firstAttribute="top" secondItem="p5z-X9-ia8" secondAttribute="bottom" constant="5" id="6sD-Zh-G0U"/>
                             <constraint firstItem="p5z-X9-ia8" firstAttribute="centerX" secondItem="7hY-Jt-sOG" secondAttribute="centerX" id="85Y-AN-FyP"/>
                             <constraint firstItem="yfr-46-xCq" firstAttribute="top" secondItem="p5z-X9-ia8" secondAttribute="bottom" constant="30" id="9vU-Oq-DxA"/>
-                            <constraint firstItem="p5z-X9-ia8" firstAttribute="leading" secondItem="kG7-hH-xCx" secondAttribute="trailing" constant="40" id="Ebx-6H-xrZ"/>
+                            <constraint firstItem="p5z-X9-ia8" firstAttribute="leading" secondItem="kG7-hH-xCx" secondAttribute="trailing" constant="15" id="Ebx-6H-xrZ"/>
+                            <constraint firstItem="Rbe-vg-JxF" firstAttribute="centerY" secondItem="kG7-hH-xCx" secondAttribute="centerY" id="NRL-6h-FKN"/>
                             <constraint firstItem="4xl-t0-smC" firstAttribute="centerY" secondItem="p5z-X9-ia8" secondAttribute="centerY" id="SUX-ol-BFS"/>
                             <constraint firstItem="kG7-hH-xCx" firstAttribute="centerY" secondItem="p5z-X9-ia8" secondAttribute="centerY" id="TJJ-lD-och"/>
                             <constraint firstItem="HMn-x4-Uf3" firstAttribute="top" secondItem="gIC-qA-1lf" secondAttribute="bottom" id="cOX-tL-4ps"/>
@@ -80,6 +95,7 @@
                             <constraint firstItem="r1s-h1-sef" firstAttribute="top" secondItem="HMn-x4-Uf3" secondAttribute="bottom" id="hM6-So-Ikt"/>
                             <constraint firstItem="9Mp-4I-9Q5" firstAttribute="centerX" secondItem="7hY-Jt-sOG" secondAttribute="centerX" id="qVX-fj-mET"/>
                             <constraint firstItem="HMn-x4-Uf3" firstAttribute="leading" secondItem="7hY-Jt-sOG" secondAttribute="leading" id="rOv-GD-D8W"/>
+                            <constraint firstItem="kG7-hH-xCx" firstAttribute="leading" secondItem="Rbe-vg-JxF" secondAttribute="trailing" constant="15" id="wDv-mn-jTj"/>
                             <constraint firstAttribute="trailing" secondItem="HMn-x4-Uf3" secondAttribute="trailing" id="y1w-XU-JNO"/>
                         </constraints>
                     </view>
@@ -101,7 +117,7 @@
                     </connections>
                 </pongPressGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="735" y="137"/>
+            <point key="canvasLocation" x="733.60000000000002" y="136.28185907046478"/>
         </scene>
         <!--Preview Video View Controller-->
         <scene sceneID="yhq-t1-YYN">
@@ -119,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8es-Sh-PRL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356" y="130"/>
+            <point key="canvasLocation" x="1470" y="136"/>
         </scene>
     </scenes>
     <resources>
